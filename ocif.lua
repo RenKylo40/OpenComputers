@@ -79,7 +79,7 @@ local ocif_image_raw = {
 --ocif.setMode( "8bit" )
 
 --Режим записи 24bit(больше размер файла, точная цветопередача) или 8bit
---ocif.setMode( "24bit" )
+ocif.setMode( "24bit" )
 
 --Запись в файл сырого изображения в "удобном" формате, т.е во вторичном(последний аргумент)
 ocif.write("ocif_test.ocif", ocif_image_raw, true)
@@ -87,7 +87,6 @@ ocif.write("ocif_test.ocif", ocif_image_raw, true)
 local ocif_image = ocif.read("ocif_test.ocif")
 --Вывод изображения
 ocif.draw( ocif_image, 1, 1, 1, gpu )
-ocif.draw( ocif_image, 2, 9, 1, gpu )
 
 --Запись в файл сырого изображения в "неудобном" формате(который был ранее уже прочитан из файла)
 ocif.write("ocif_test.ocif", ocif_image)
