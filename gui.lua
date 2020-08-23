@@ -4,6 +4,9 @@ local unicode = require("unicode")
 local pull_e = require('event').pull
 w, h = gpu.getResolution()
 
+local ocif = require "ocif"
+ocif.setMode( "24bit" )
+
 local colors = {
                   ['0'] = 0x0000, ['1'] = 0x0000AA, ['2'] = 0x00AA00, ['3'] = 0x00AAAA,
                   ['4'] = 0xAA0000, ['5'] = 0xAA00AA, ['6'] = 0xFFAA00, ['7'] = 0xAAAAAA,
@@ -53,10 +56,6 @@ function colorsCount(text)
 end
 
 -- рисуем пиксель
-function drawPixel(x, y, color)
-  gpu.setBackground(color)
-  gpu.set(x, y, " ")
-end
 
 function drawRect(x, y, width, height, color, border)
   if width == "full" then
@@ -89,10 +88,8 @@ function drawRect(x, y, width, height, color, border)
   end
 end
 
-function drawImage(img)
-  for i = 1, #img do
-    drawPixel(img[i][1],img[i][2],img[i][3])
-  end
+function drawImage(img, frame, x, y)
+  ocif.draw(img, frame, x, y, gpu)
 end
 
 function drawText(x, y, color, text)
@@ -172,9 +169,13 @@ function draw(data)
           -- Прямоугольник
           if type == "rect" then
             drawRect(style[1], style[2], width, height, style[5], style[6])
+          -- Изображение
+        elseif type == "image" then
+            drawImage(body[i]['img'], body[i]['frame'], style[1], style[2])
           -- Кнопка
           elseif type == "button" then
             drawButton(style[1], style[2], width, height, style[5], style[6], style[7], body[i]['text'], body[i]['action'])
+          -- Мультикнопка
           elseif type == "multibutton" then
             drawMultiButton(style[1], style[2], width, height, body[i]['buttons'])
           -- Текст
