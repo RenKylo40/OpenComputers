@@ -1,3 +1,6 @@
+[IMAGE_WIDTH] = 32,
+[IMAGE_HEIGHT] = 16,
+[IMAGE_FRAMES] = 1,
 [IMAGE] = {
   0xffffff, 0x00000000, 120, ' ',
   0xffffff, 0x00000000, 120, ' ',
