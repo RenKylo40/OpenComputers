@@ -34,7 +34,7 @@ local IMAGE        = 4
 local ocif_image_raw = {
 	[IMAGE_WIDTH] = 8, --Ширина изображения
 	[IMAGE_HEIGHT] = 4, --Высота изображения
-	[IMAGE_FRAMES] = 2,
+	[IMAGE_FRAMES] = 1,
 	[IMAGE] = { 
 		0xffffff, 0x000000, 0, '┌',
 		0xffffff, 0x114B96, 120, '─', 
@@ -71,7 +71,7 @@ local ocif_image_raw = {
 		0xffffff, 0x114B96, 120, '─', 
 		0xffffff, 0x114B96, 120, '─',
 		0xffffff, 0x114B96, 120, '┘'
-	},
+	}
 }
 
 --Загрузка палитры. Обязательно для 8bit формата!
