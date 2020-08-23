@@ -32,18 +32,18 @@ local IMAGE        = 4
 
 --Сырое изображение, т.е. массив(первый формат, удобен для редактирования из редактора)
 local ocif_image_raw = {
-	[IMAGE_WIDTH] = 8, --Ширина изображения
-	[IMAGE_HEIGHT] = 4, --Высота изображения
+	[IMAGE_WIDTH] = 32, --Ширина изображения
+	[IMAGE_HEIGHT] = 16, --Высота изображения
 	[IMAGE_FRAMES] = 1,
 	[IMAGE] = { 
-		0xffffff, 0x000000, 0, '┌',
-		0xffffff, 0x114B96, 120, '─', 
-		0xffffff, 0x114B96, 120, '─',
-		0xffffff, 0x114B96, 120, '─',
-		0xffffff, 0x114B96, 120, '─',
-		0xffffff, 0x114B96, 120, '─',
-		0xffffff, 0x114B96, 120, '─', 
-		0xffffff, 0x000000, 0, '┐',
+		0xffffff, 0x000000, 0, ' ',
+		0xffffff, 0x114B96, 120, ' ', 
+		0xffffff, 0x114B96, 120, ' ',
+		0xffffff, 0x114B96, 120, ' ',
+		0xffffff, 0x114B96, 120, ' ',
+		0xffffff, 0x114B96, 120, ' ',
+		0xffffff, 0x114B96, 120, ' ', 
+		0xffffff, 0x000000, 0, ' ',
 
 		0xffffff, 0x114B96, 120, '╞',
 		0xffffff, 0x114B96, 120, '─', 
