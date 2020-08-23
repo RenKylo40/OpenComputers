@@ -94,7 +94,6 @@ ocif.write("ocif_test.ocif", ocif_image)
 ocif_image = ocif.read("ocif_test.ocif")
 --Вывод изображения
 ocif.draw( ocif_image, 1, 18, 1, gpu )
-ocif.draw( ocif_image, 2, 26, 1, gpu )
 
 --Чтение в виде "удобного" массива
 --ocif_image = ocif.read("ocif_test.ocif", true)
